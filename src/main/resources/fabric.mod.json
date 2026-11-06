@@ -2,19 +2,17 @@
   "schemaVersion": 1,
   "id": "paragraphs",
   "version": "${version}",
-
   "name": "Paragraphs",
-  "description": "Mod that allows you to write paragraphs",
+  "description": "Mod that allows you to write paragraphs and section signs (§) in chat, signs, and books",
   "authors": [
-    "FurnyGo"
+    "FurnyGo",
+    "shisno2"
   ],
   "contact": {
     "sources": "https://github.com/FurnyGo/Paragraphs"
   },
-
   "license": "MIT",
   "icon": "assets/paragraphs/icon.png",
-
   "environment": "*",
   "entrypoints": {
     "main": [
@@ -24,10 +22,8 @@
   "mixins": [
     "paragraphs.mixins.json"
   ],
-
   "depends": {
-    "fabricloader": ">=0.7.4",
-    "fabric": "*",
-    "minecraft": ">=1.16"
+    "fabricloader": ">=0.16.0",
+    "minecraft": ">=1.21.0"
   }
 }

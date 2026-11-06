@@ -9,12 +9,13 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(SharedConstants.class)
 public class MixinSharedConstants {
 
-	/**
-	 * @author Morgz
-	 * Makes you able to "chat" § etc. (normally "illegal" characters)
-	 */
-	@Inject(method = "isValidChar", at = @At(value = "HEAD"), cancellable = true)
-	private static void isValidChar(CallbackInfoReturnable<Boolean> info) {
-		info.setReturnValue(true);
-	}
+    /**
+     * Allows section signs (§) and formatted styling in chat, books, and inputs.
+     */
+    @Inject(method = "isValidChar", at = @At("HEAD"), cancellable = true)
+    private static void isValidChar(char chr, CallbackInfoReturnable<Boolean> cir) {
+        if (chr == '§' || chr == 167) {
+            cir.setReturnValue(true);
+        }
+    }
 }
